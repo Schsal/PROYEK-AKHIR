@@ -1,0 +1,5 @@
+pandas version: 2.2.2
+numpy version: 1.26.4
+matplotlib version: 3.10.0
+seaborn version: 0.13.2
+Streamlit version: 1.43.1
