@@ -29,6 +29,7 @@ else:
     st.write("Data tidak tersedia untuk filter yang dipilih")
 
 #Visualisasi Total Rental Per Jam tahun 2011
+st.header("Visualisasi Data")
 st.subheader("Total Rental Per Jam Tahun 2011")
 byhour2011_df=data_df[data_df['yr']==2011].groupby(by="hr")["total_rental"].sum().reset_index()
 fig, ax = plt.subplots()
