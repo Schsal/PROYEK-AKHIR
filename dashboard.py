@@ -113,7 +113,7 @@ ax.set_title("Total Rental Per Hour", loc="center", fontsize=30)
 st.pyplot(fig)
 
 byworkingday_comparison_df = dataday_df.groupby('workingday')[['casual', 'registered']].mean()
-st.subheader("Rental User Comparisan by Weekday (Average)")
+st.subheader("Average Rentals by User Type: Weekdays vs. Holidays")
 fig, ax = plt.subplots(figsize=(16,8))
 byworkingday_comparison_df.plot(kind='bar', ax=ax, color=["orange", "blue"])
 ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: f'{int(x):,}'))
