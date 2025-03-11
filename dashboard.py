@@ -96,6 +96,7 @@ ax.set_xlabel(None)
 ax.set_ylabel("Total rental")
 ax.set_title("Casual VS Registered (Monthly)", loc="center", fontsize=30)
 ax.legend(["Casual", "Registered"])
+ax.set_xticklabels(status_user_df.index.strftime('%Y-%m'), rotation=45)
 st.pyplot(fig)
 
 st.subheader("Hourly Bike Rental Trends")
