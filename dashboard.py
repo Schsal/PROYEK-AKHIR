@@ -5,7 +5,14 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import matplotlib.ticker as ticker
 
-#sns.set(style='dark')
+sns.set(style='dark')
+st.sidebar.markdown("""
+## 📌 How to Use the Dashboard  
+- 🔍 **Explore Trends**: Analisis pola penyewaan sepeda berdasarkan berbagai faktor.  
+- 📊 **Compare User Types**: Lihat perbedaan antara penyewa casual dan registered.  
+- 🚴 **Analyze Holiday Effects**: Temukan pola penyewaan saat hari libur.  
+""")
+
 
 def create_daily_rentals_df(df):
     daily_rentals_df = df.resample(rule = 'D', on = 'dteday').agg({'total_rental' : 'sum'})
@@ -121,3 +128,7 @@ ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: f'{int(x):,}'))
 ax.set_xlabel("Working Day")
 ax.set_ylabel("Total Rental")
 st.pyplot(fig)
+with st.expander("See Explanation") :
+    st.write(":sparkles: Dari data keseluruhan terlihat bahwa penyewaan sepeda cenderung lebih tinggi pada musim gugur"
+    " dan paling rendah saat musim semi. Selain itu, pengguna casual lebih banyak menyewa saat hari libur dibanding hari kerja, "
+    "sedangkan pengguna registered lebih konsisten menyewa setiap hari namun terkadang mengalami penuruan saat holidays :sparkles:")
